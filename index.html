@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Monster Jail</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="game-shell" aria-label="Monster Jail game">
+      <section class="hud" aria-live="polite">
+        <div>
+          <p class="eyebrow">Monster Jail</p>
+          <h1>Catch the Monsters</h1>
+        </div>
+        <div class="stats">
+          <span><strong id="caughtCount">0</strong> jailed</span>
+          <span><strong id="monsterCount">6</strong> loose</span>
+          <span><strong id="timer">60</strong>s</span>
+        </div>
+      </section>
+
+      <section class="stage-wrap">
+        <canvas id="gameCanvas" width="960" height="600" aria-label="Playable cartoon game canvas"></canvas>
+        <div class="overlay" id="overlay">
+          <h2 id="overlayTitle">Ready?</h2>
+          <p id="overlayText">Use the arrow keys to move. Bump a monster to carry it, then walk to the jail.</p>
+          <button id="startButton" type="button">Start Game</button>
+        </div>
+        <div class="instructions-modal" id="instructionsModal" hidden>
+          <div class="instructions-card" role="dialog" aria-modal="true" aria-labelledby="instructionsTitle">
+            <p class="eyebrow">How to Play</p>
+            <h2 id="instructionsTitle">Catch the Monsters</h2>
+            <div class="move-keys" aria-label="Arrow key controls">
+              <span></span>
+              <span>Up</span>
+              <span></span>
+              <span>Left</span>
+              <span>Down</span>
+              <span>Right</span>
+            </div>
+            <p>Use the arrow keys to move around the park.</p>
+            <p>Bump into a monster to catch it, then walk to the jail to put it inside.</p>
+            <button id="instructionsButton" type="button">Lets Go</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="controls" aria-label="Controls">
+        <button class="arrow-btn" id="upBtn" type="button" aria-label="Move up">Up</button>
+        <div>
+          <button class="arrow-btn" id="leftBtn" type="button" aria-label="Move left">Left</button>
+          <button class="arrow-btn" id="downBtn" type="button" aria-label="Move down">Down</button>
+          <button class="arrow-btn" id="rightBtn" type="button" aria-label="Move right">Right</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
